@@ -5,81 +5,87 @@
     box-sizing: border-box;
 }
 
-/* Body background with a smooth gradient */
+/* Body background with pink gradient */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #ff2a7d, #f72d7f, #d615b5);
     background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
+    animation: gradientShift 15s ease infinite;
     color: #fff;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
-/* Container for the content */
+/* Container with a frosted glass effect */
 .container {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
-}
-
-/* Header styling with animation */
-header {
-    margin-bottom: 40px;
     animation: fadeIn 2s ease-out;
 }
 
+/* Header styling */
+header {
+    margin-bottom: 40px;
+}
+
 header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    animation: bounceIn 1s ease;
 }
 
 header p {
-    font-size: 1.5em;
-    color: #ccc;
+    font-size: 1.6em;
+    color: #f7a6d7;
 }
 
-/* Card sections for each content block */
+/* Card sections with glowing effect */
 .card {
     background: rgba(255, 255, 255, 0.2);
-    padding: 30px;
+    padding: 35px;
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: scaleUp 0.6s ease-out;
 }
 
 .card h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 15px;
-    color: #ff8c00;
+    color: #ff3399;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card p {
-    font-size: 1.2em;
-    color: #ddd;
+    font-size: 1.3em;
+    color: #e8a0d8;
 }
 
+/* Hover effect on card */
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer styling */
 footer {
     margin-top: 40px;
     font-size: 1.2em;
-    color: #ccc;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: #f7a6d7;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    font-style: italic;
 }
 
 /* Animations */
@@ -92,12 +98,29 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    50% { transform: translateY(15px); opacity: 1; }
+    100% { transform: translateY(0); }
 }
 
 /* Responsive design */
@@ -112,5 +135,9 @@ footer {
 
     .card {
         padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.8em;
     }
 }
